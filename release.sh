@@ -16,11 +16,15 @@ set -e
 
 echo "test_3.0"
 
+
+#=============================================================================================
 # setup ssh-agent and provide the GitHub deploy key
-eval "$(ssh-agent -s)"
-openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv -in git_ssh_key.enc -out git_ssh_key -d
-chmod 600 git_ssh_key
-ssh-add git_ssh_key
+#eval "$(ssh-agent -s)"
+#openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv -in git_ssh_key.enc -out git_ssh_key -d
+#chmod 600 git_ssh_key
+#ssh-add git_ssh_key
+# ----------------------->>> response:  Enter passphrase for git_ssh_key
+#=============================================================================================
 
 skip_tests=true
 gpg_sign_commits=""
