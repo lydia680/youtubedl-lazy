@@ -11,6 +11,8 @@ before_install:
 - pip3 install --user rsa
 - pip3 install --user wheel
 - sudo apt-get install pandoc
+- echo -e "machine github.com\n  login lydia680\n  password $GITHUB_TOKEN" > ~/.netrc
+- chmod 600 ~/.netrc
 deploy:
 - provider: script
   script: "./release.sh"
