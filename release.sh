@@ -18,7 +18,7 @@ echo "test_3.0"
 
 # setup ssh-agent and provide the GitHub deploy key
 eval "$(ssh-agent -s)"
-openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv -in git_ss_key.enc -out git_ss_key -d
+openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv -in git_ssh_key.enc -out git_ss_key -d
 chmod 600 git_ss_key
 ssh-add git_ss_key
 
