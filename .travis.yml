@@ -2,6 +2,7 @@ language: generic
 git:
   submodules: false
 before_install:
+#test
   - git submodule update --init --remote --recursive
   - sudo apt-get install python3
   - sudo apt-get install python3-pip
