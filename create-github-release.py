@@ -25,8 +25,6 @@ from youtube_dl.utils import (
 
 
 class GitHubReleaser(object):
-    #_API_URL = 'https://api.github.com/repos/yausername/youtubedl-lazy/releases'
-    #_UPLOADS_URL = 'https://uploads.github.com/repos/yausername/youtubedl-lazy/releases/%s/assets?name=%s'
     _API_URL = 'https://api.github.com/repos/lydia680/youtubedl-lazy/releases'
     _UPLOADS_URL = 'https://uploads.github.com/repos/lydia680/youtubedl-lazy/releases/%s/assets?name=%s'
  
