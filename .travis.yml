@@ -2,16 +2,17 @@ language: generic
 git:
   submodules: false
 before_install:
-#test
-  - git submodule update --init --remote --recursive
-  - sudo apt-get install python3
-  - sudo apt-get install python3-pip
-  - sudo apt-get install python3-setuptools  
-  - pip3 install --user rsa
-  - pip3 install --user wheel
-  - sudo apt-get install pandoc
-  - echo -e "machine github.com\n  login lydia680\n  password $CI_USER_PASSWORD" > ~/.netrc
-  - chmod 600 ~/.netrc
+- openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv
+  -in git_ssh_key.enc -out git_ssh_key -d
+- git submodule update --init --remote --recursive
+- sudo apt-get install python3
+- sudo apt-get install python3-pip
+- sudo apt-get install python3-setuptools
+- pip3 install --user rsa
+- pip3 install --user wheel
+- sudo apt-get install pandoc
+#  - echo -e "machine github.com\n  login lydia680\n  password $CI_USER_PASSWORD" > ~/.netrc
+#  - chmod 600 ~/.netrc
 deploy:
   - provider: script
     script: ./release.sh
