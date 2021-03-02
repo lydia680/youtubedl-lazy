@@ -11,19 +11,8 @@
 # TODO
 # release notes
 # make hash on local files
-cd
+
 set -e
-echo "test_3.0"
-
-
-#=============================================================================================
-# setup ssh-agent and provide the GitHub deploy key
-#eval "$(ssh-agent -s)"
-#openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv -in git_ssh_key.enc -out git_ssh_key -d
-#chmod 600 git_ssh_key
-#ssh-add git_ssh_key
-# ----------------------->>> response:  Enter passphrase for git_ssh_key
-#=============================================================================================
 
 skip_tests=true
 gpg_sign_commits=""
@@ -141,9 +130,6 @@ RELEASE_FILES="youtube-dl youtube-dl-$version.tar.gz"
 
 #/bin/echo -e "\n### Signing and uploading the new binaries to GitHub..."
 #for f in $RELEASE_FILES; do gpg --passphrase-repeat 5 --detach-sig "build/$version/$f"; done
-/bin/echo -e "\n### info1: "ChangeLog
-/bin/echo -e "\n### info2: "$version
-/bin/echo -e "\n### info3: $ROOT/build/$version"
 
 ROOT=$(pwd)
 python3 ../create-github-release.py ChangeLog $version "$ROOT/build/$version"
