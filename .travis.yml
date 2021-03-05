@@ -2,8 +2,8 @@ language: generic
 git:
   submodules: false
 before_install:
-- openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv
-  -in git_ssh_key.enc -out git_ssh_key -d
+#- openssl aes-256-cbc -K $encrypted_b900eda9edae_key -iv $encrypted_b900eda9edae_iv
+#  -in git_ssh_key.enc -out git_ssh_key -d
 - git submodule update --init --remote --recursive
 - sudo apt-get install python3
 - sudo apt-get install python3-pip
